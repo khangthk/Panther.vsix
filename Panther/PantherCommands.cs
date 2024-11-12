@@ -56,6 +56,7 @@ namespace Panther
             RegisterCommand(new BuildPantherCommon(), PackageIds.CommandBuildPantherCommon);
             RegisterCommand(new RebuildPantherCommon(), PackageIds.CommandRebuildPantherCommon);
             RegisterCommand(new BuildCoreCommon(), PackageIds.CommandBuildCoreCommon);
+            RegisterCommand(new RebuildCoreCommon(), PackageIds.CommandRebuildCoreCommon);
         }
 
         private void RegisterCommand(CommandBase command, int id)
