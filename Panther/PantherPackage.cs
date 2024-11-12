@@ -45,6 +45,7 @@ namespace Panther
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await PackageHelper.InitializeAsync(this);
             await PantherCommands.InitializeAsync(this);
+            await PantherBuildEvents.InitializeAsync(this);
         }
     }
 }
