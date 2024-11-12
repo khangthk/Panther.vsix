@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildDependencies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildSolutionBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildTargetBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildThirdParty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
