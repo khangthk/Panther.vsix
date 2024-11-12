@@ -1,5 +1,6 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
+using Panther.Commands;
 using Panther.Helpers;
 using System.Diagnostics;
 using Task = System.Threading.Tasks.Task;
@@ -36,7 +37,17 @@ namespace Panther
 
         private void OnBuildDone(vsBuildScope Scope, vsBuildAction Action)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             Debug.WriteLine("--> OnBuildDone event triggered.");
+
+            if (PantherHelper.IsPantherSolution())
+            {
+                if (RegistryHelper.GetAutoDeleteLockFiles())
+                {
+                    DeleteLockFilesInPantherSite.DeleteLockFiles();
+                }
+            }
 
             IsBuilding = false;
         }

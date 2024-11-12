@@ -45,6 +45,11 @@ namespace Panther.Commands
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
+            if (RegistryHelper.GetAutoDeleteLockFiles())
+            {
+                DeleteLockFilesInPantherSite.DeleteLockFiles();
+            }
+
             RunExe();
         }
 
