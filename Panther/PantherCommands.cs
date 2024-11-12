@@ -70,6 +70,7 @@ namespace Panther
             RegisterCommand(new RunWTCP(), PackageIds.CommandRunWTCP);
             RegisterCommand(new RunLoggingTool(), PackageIds.CommandRunLoggingTool);
             RegisterCommand(new CopyBinFiles(), PackageIds.CommandCopyBinFiles);
+            RegisterCommand(new OpenBinFolder(), PackageIds.CommandOpenBinFolder);
         }
 
         private void RegisterCommand(CommandBase command, int id)
