@@ -71,6 +71,7 @@ namespace Panther
             RegisterCommand(new RunLoggingTool(), PackageIds.CommandRunLoggingTool);
             RegisterCommand(new CopyBinFiles(), PackageIds.CommandCopyBinFiles);
             RegisterCommand(new OpenBinFolder(), PackageIds.CommandOpenBinFolder);
+            RegisterCommand(new DeleteLockFilesInPantherSite(), PackageIds.CommandDeleteLockFilesInPantherSite);
         }
 
         private void RegisterCommand(CommandBase command, int id)

@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildThirdParty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CopyBinFiles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\DeleteLockFilesInPantherSite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\OpenBinFolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildCoreCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildPantherCommon.cs" />
