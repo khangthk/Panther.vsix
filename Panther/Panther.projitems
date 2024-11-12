@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildTargetBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildThirdParty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CopyBinFiles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildCoreCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildPantherCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunAMSManager.cs" />
@@ -44,11 +45,32 @@
     <Compile Include="$(MSBuildThisFileDirectory)PantherCommandTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PantherPackage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\CopyBinFilesWindow.xaml.cs">
+      <DependentUpon>CopyBinFilesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\CopyProgressViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\CopyProgressWindow.xaml.cs">
+      <DependentUpon>CopyProgressWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\FileItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\FolderBrowser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\MessageBoxEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Windows\Profile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Resources\PantherCommands.png" />
     <VSCTCompile Include="$(MSBuildThisFileDirectory)PantherPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Windows\CopyBinFilesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Windows\CopyProgressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

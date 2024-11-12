@@ -1,0 +1,104 @@
+﻿<Window x:Class="Panther.Windows.CopyBinFilesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Panther.Windows"
+        mc:Ignorable="d"
+        Title="Copy Bin Files" Height="600" Width="660" FontSize="14"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="57" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Src Bin:" Margin="0,0,10,0" Height="24"/>
+                        <TextBox Grid.Column="1" Name="TextBoxSrcBin" Text="" IsReadOnly="True" Background="Azure" Height="24"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="57"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Dst Bin:" Margin="0,10,10,0" Height="24"/>
+                        <ComboBox Grid.Column="1" Name="ComboBoxDstBin" Text="" Margin="0,10,0,0" Height="24" IsEditable="True" 
+                                  SelectionChanged="OnComboBoxDstBin_SelectionChanged"
+                                  TextBoxBase.TextChanged="OnComboBoxDstBin_TextChanged"
+                                  LostFocus="OnComboBoxDstBin_LostFocus"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="140"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="0 10 10 0">
+                            <TextBlock Name="TextBlockTotalFiles" Text="Total Files: 0" Height="24"/>
+                            <TextBlock Name="TextBlockTotalSize" Text="Total Size: 0.00 MB" Margin="40,0,0,0" Height="24"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Name="ButtonCopyToClipboard" Content="Copy to Clipboard" Margin="0,10,0,0" Click="OnCopyToClipboard_Click" Height="24" VerticalAlignment="Top"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="110"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Grid.Column="0" Name="ComboBoxProfile" SelectedIndex="0" Margin="0 10 0 0" Height="24" SelectionChanged="OnComboBoxProfile_SelectionChanged">
+                            <ComboBoxItem>Profile 1 - Basic Exe + Configurations</ComboBoxItem>
+                            <ComboBoxItem>Profile 2 - All Exe + Configurations</ComboBoxItem>
+                            <ComboBoxItem>Profile 3 - All Exe + Configurations + Other</ComboBoxItem>
+                        </ComboBox>
+                        <Button Grid.Column="1" Name="ButtonReset" Content="Reset" Margin="10,10,0,0" Click="OnReset_Click" Height="24" VerticalAlignment="Top"/>
+                        <Button Grid.Column="2" Name="ButtonUnselectAll" Content="Unselect All" Margin="10,10,0,0" Click="OnUnselectAll_Click" Height="24"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                    <Button Name="ButtonOpen" Content="Open" Click="OnOpenSrcBin_Click" Height="24"/>
+                    <Button Name="ButtonBrowse" Content="Browse" Margin="0 10 0 0" Click="OnBrowseDstBin_Click" Height="24"/>
+                    <Button Name="ButtonCopyToDst" Content="Copy to Dst" Margin="0 10 0 0" Click="OnCopyToDst_Click" Height="24"/>
+                    <Button Name="ButtonRefresh" Content="Refresh" Margin="0 10 0 0" Click="OnRefresh_Click" Height="24"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <ListView Grid.Row="1" Name="ListViewFileFolder" ItemsSource="{Binding FileItems}" d:ItemsSource="{d:SampleData ItemCount=20}" Margin="0,10,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30">
+                        <!-- CheckBox Column -->
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsChecked}" Click="OnCheckBoxSelectFile_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="30">
+                        <!-- Icon Column -->
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Icon}" Width="16" Height="16"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="310" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="220" Header="Type" DisplayMemberBinding="{Binding Type}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
