@@ -68,6 +68,7 @@ namespace Panther
             RegisterCommand(new RunDICOMCommunicator(), PackageIds.CommandRunDICOMCommunicator);
             RegisterCommand(new RunDICOMServer(), PackageIds.CommandRunDICOMServer);
             RegisterCommand(new RunWTCP(), PackageIds.CommandRunWTCP);
+            RegisterCommand(new RunLoggingTool(), PackageIds.CommandRunLoggingTool);
         }
 
         private void RegisterCommand(CommandBase command, int id)
