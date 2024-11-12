@@ -18,6 +18,11 @@ namespace Panther.Commands
                 UnlockUtilityLockedByUser.UnlockUtility();
             }
 
+            if (RegistryHelper.GetAutoFixAppClosing())
+            {
+                FixAppClosingAfter15Seconds.FixApp();
+            }
+
             _ = new CopyBinFilesWindow() { Owner = Application.Current?.MainWindow }.ShowDialog();
         }
 

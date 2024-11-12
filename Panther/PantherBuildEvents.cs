@@ -52,6 +52,11 @@ namespace Panther
                 {
                     UnlockUtilityLockedByUser.UnlockUtility();
                 }
+
+                if (RegistryHelper.GetAutoFixAppClosing())
+                {
+                    FixAppClosingAfter15Seconds.FixApp();
+                }
             }
 
             IsBuilding = false;
