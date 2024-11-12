@@ -73,6 +73,7 @@ namespace Panther
             RegisterCommand(new OpenBinFolder(), PackageIds.CommandOpenBinFolder);
             RegisterCommand(new DeleteLockFilesInPantherSite(), PackageIds.CommandDeleteLockFilesInPantherSite);
             RegisterCommand(new UnlockUtilityLockedByUser(), PackageIds.CommandUnlockUtilityLockedByUser);
+            RegisterCommand(new FixAppClosingAfter15Seconds(), PackageIds.CommandFixAppClosingAfter15Seconds);
         }
 
         private void RegisterCommand(CommandBase command, int id)
