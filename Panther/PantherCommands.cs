@@ -65,6 +65,7 @@ namespace Panther
             RegisterCommand(new RunLicenseManager(), PackageIds.CommandRunLicenseManager);
             RegisterCommand(new RunLicenseServer(), PackageIds.CommandRunLicenseServer);
             RegisterCommand(new RunSecurityManager(), PackageIds.CommandRunSecurityManager);
+            RegisterCommand(new RunDICOMCommunicator(), PackageIds.CommandRunDICOMCommunicator);
         }
 
         private void RegisterCommand(CommandBase command, int id)

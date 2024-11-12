@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunAMSManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunConfigTool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RunDICOMCommunicator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunImportTool.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunLicenseManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunLicenseServer.cs" />
