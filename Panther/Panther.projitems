@@ -10,6 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IniHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MSBuildHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\OutputPaneHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PackageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PantherHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RegistryHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SolutionHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PantherCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PantherCommandTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PantherPackage.cs" />
