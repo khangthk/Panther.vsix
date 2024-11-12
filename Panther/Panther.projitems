@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildCoreCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildPantherCommon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RunAMSManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunConfigTool.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunImportTool.cs" />
