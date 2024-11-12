@@ -34,6 +34,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunPantherTPS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunSecurityManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunWTCP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\UnlockUtilityLockedByUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IniHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MSBuildHelper.cs" />
