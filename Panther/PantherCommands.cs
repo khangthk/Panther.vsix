@@ -63,6 +63,7 @@ namespace Panther
             RegisterCommand(new RunImportTool(), PackageIds.CommandRunImportTool);
             RegisterCommand(new RunAMSManager(), PackageIds.CommandRunAMSManager);
             RegisterCommand(new RunLicenseManager(), PackageIds.CommandRunLicenseManager);
+            RegisterCommand(new RunLicenseServer(), PackageIds.CommandRunLicenseServer);
         }
 
         private void RegisterCommand(CommandBase command, int id)
