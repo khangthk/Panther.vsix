@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Panther.Helpers;
+using Panther.Settings;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -29,6 +30,7 @@ namespace Panther
     [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
     [Guid(PackageGuids.guidPantherPackageString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideOptionPage(typeof(PantherOptionPage), "Panther", "General", 0, 0, true)]
     public sealed class PantherPackage : AsyncPackage
     {
         /// <summary>
