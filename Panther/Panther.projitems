@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunConfigTool.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunImportTool.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RunLicenseManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunMachineDataEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunPantherTPS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
