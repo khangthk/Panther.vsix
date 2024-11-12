@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildDependencies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildPantherCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildSolutionBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildTargetBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildThirdParty.cs" />
