@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidPantherPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <Menus>
+      <Menu guid="guidPantherPackageCmdSet" id="PantherMenu" type="Menu" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+        <Strings>
+          <ButtonText>&amp;Panther</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="guidPantherPackageCmdSet" id="MenuBuildGroup" priority="0x0600">
+        <Parent guid="guidPantherPackageCmdSet" id="PantherMenu"/>
+      </Group>
+      <Group guid="guidPantherPackageCmdSet" id="MenuRunGroup" priority="0x0600">
+        <Parent guid="guidPantherPackageCmdSet" id="PantherMenu"/>
+      </Group>
+      <Group guid="guidPantherPackageCmdSet" id="MenuBinGroup" priority="0x0600">
+        <Parent guid="guidPantherPackageCmdSet" id="PantherMenu"/>
+      </Group>
+      <Group guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" priority="0x0600">
+        <Parent guid="guidPantherPackageCmdSet" id="PantherMenu"/>
+      </Group>
+      <Group guid="guidPantherPackageCmdSet" id="MenuSettingGroup" priority="0x0600">
+        <Parent guid="guidPantherPackageCmdSet" id="PantherMenu"/>
+      </Group>
+    </Groups>
+
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="guidPantherPackageCmdSet" id="CommandBuildDependencies" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildSolution" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Build Dependencies</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandBuildThirdParty" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildSolution" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Build ThirdParty</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandBuildPantherCommon" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildProject" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Build PantherCommon</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRebuildPantherCommon" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildProject" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Rebuild PantherCommon</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandBuildCoreCommon" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildProject" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Build CoreCommon</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRebuildCoreCommon" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBuildGroup" />
+        <Icon guid="guidImages" id="iconBuildProject" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Rebuild CoreCommon</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunPantherTPS" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconPanther" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run Panther.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunConfigTool" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconConfigTool" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run ConfigTool.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunMachineDataEntry" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconMDE" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run MachineDataEntry.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunImportTool" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconImportTool" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run ImportTool.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunAMSManager" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconAMSManager" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run AMSManager.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunLicenseManager" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconLicenseManager" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run LicenseManager.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunLicenseServer" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconLicenseServer" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run LicenseServer.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunSecurityManager" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconSecurityManager" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run SecurityManager.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunDICOMCommunicator" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconDICOMCommunicator" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run DICOMCommunicator.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunDICOMServer" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconDICOMServer" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run DICOMServer.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunWTCP" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconWTCP" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run WTCP.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandRunLoggingTool" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuRunGroup" />
+        <Icon guid="guidImages" id="iconLoggingTool" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Run LoggingTool.exe</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandCopyBinFiles" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBinGroup" />
+        <Icon guid="guidImages" id="iconCopy" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Copy Bin Files</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandOpenBinFolder" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuBinGroup" />
+        <Icon guid="guidImages" id="iconOpen" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Open Bin Folder</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandDeleteLockFilesInPantherSite" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconClear" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Delete Lock Files in Panther Site</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandUnlockUtilityLockedByUser" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconUnlock" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Unlock Utility Locked By User</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandFixAppClosingAfter15Seconds" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconFixApp" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Fix App Closing After 15 Seconds</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandEnableDisableAutoDeleteLockFiles" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconFlash" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Enable/Disable Auto Delete Lock Files</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandEnableDisableAutoUnlockUtility" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconFlash" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Enable/Disable Auto Unlock Utility</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandEnableDisableAutoFixAppClosing" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuUtilityGroup" />
+        <Icon guid="guidImages" id="iconFlash" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Enable/Disable Auto Fix App Closing</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPantherPackageCmdSet" id="CommandSettingComponents" priority="0x0100" type="Button">
+        <Parent guid="guidPantherPackageCmdSet" id="MenuSettingGroup" />
+        <Icon guid="guidImages" id="iconSetting" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Setting Components</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\PantherCommands.png"
+              usedList="iconBuildSolution,
+                        iconBuildProject,
+                        iconPanther,
+                        iconConfigTool,
+                        iconMDE,
+                        iconImportTool,
+                        iconAMSManager,
+                        iconLicenseManager,
+                        iconLicenseServer,
+                        iconSecurityManager,
+                        iconDICOMCommunicator,
+                        iconDICOMServer,
+                        iconWTCP,
+                        iconLoggingTool,
+                        iconCopy,
+                        iconOpen,
+                        iconClear,
+                        iconUnlock,
+                        iconFixApp,
+                        iconFlash,
+                        iconSetting"/>
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidPantherPackage" value="{ea6b662e-71cd-4115-96cd-0076516b6475}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidPantherPackageCmdSet" value="{68d99c7e-3d4a-4d3d-ae44-5c7025d08e3a}">
+      <IDSymbol name="PantherMenu" value="0x1000" />
+      <IDSymbol name="MenuBuildGroup" value="0x1001" />
+      <IDSymbol name="MenuRunGroup" value="0x1002" />
+      <IDSymbol name="MenuBinGroup" value="0x1003" />
+      <IDSymbol name="MenuUtilityGroup" value="0x1004" />
+      <IDSymbol name="MenuSettingGroup" value="0x1005" />
+
+      <IDSymbol name="CommandBuildDependencies" value="0x1100" />
+      <IDSymbol name="CommandBuildThirdParty" value="0x1101" />
+      <IDSymbol name="CommandBuildPantherCommon" value="0x1102" />
+      <IDSymbol name="CommandRebuildPantherCommon" value="0x1103" />
+      <IDSymbol name="CommandBuildCoreCommon" value="0x1104" />
+      <IDSymbol name="CommandRebuildCoreCommon" value="0x1105" />
+
+      <IDSymbol name="CommandRunPantherTPS" value="0x1200" />
+      <IDSymbol name="CommandRunConfigTool" value="0x1201" />
+      <IDSymbol name="CommandRunMachineDataEntry" value="0x1202" />
+      <IDSymbol name="CommandRunImportTool" value="0x1203" />
+      <IDSymbol name="CommandRunAMSManager" value="0x1204" />
+      <IDSymbol name="CommandRunLicenseManager" value="0x1205" />
+      <IDSymbol name="CommandRunLicenseServer" value="0x1206" />
+      <IDSymbol name="CommandRunSecurityManager" value="0x1207" />
+      <IDSymbol name="CommandRunDICOMCommunicator" value="0x1208" />
+      <IDSymbol name="CommandRunDICOMServer" value="0x1209" />
+      <IDSymbol name="CommandRunWTCP" value="0x120A" />
+      <IDSymbol name="CommandRunLoggingTool" value="0x120B" />
+
+      <IDSymbol name="CommandCopyBinFiles" value="0x1300" />
+      <IDSymbol name="CommandOpenBinFolder" value="0x1301" />
+
+      <IDSymbol name="CommandDeleteLockFilesInPantherSite" value="0x1400" />
+      <IDSymbol name="CommandUnlockUtilityLockedByUser" value="0x1401" />
+      <IDSymbol name="CommandFixAppClosingAfter15Seconds" value="0x1402" />
+      <IDSymbol name="CommandEnableDisableAutoDeleteLockFiles" value="0x1403" />
+      <IDSymbol name="CommandEnableDisableAutoUnlockUtility" value="0x1404" />
+      <IDSymbol name="CommandEnableDisableAutoFixAppClosing" value="0x1405" />
+
+      <IDSymbol name="CommandSettingComponents" value="0x1500" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{f9db81a1-e40a-44ab-b9ee-8dc5c610a548}" >
+      <IDSymbol name="iconBuildSolution" value="1" />
+      <IDSymbol name="iconBuildProject" value="2" />
+      <IDSymbol name="iconPanther" value="3" />
+      <IDSymbol name="iconConfigTool" value="4" />
+      <IDSymbol name="iconMDE" value="5" />
+      <IDSymbol name="iconImportTool" value="6" />
+      <IDSymbol name="iconAMSManager" value="7" />
+      <IDSymbol name="iconLicenseManager" value="8" />
+      <IDSymbol name="iconLicenseServer" value="9" />
+      <IDSymbol name="iconSecurityManager" value="10" />
+      <IDSymbol name="iconDICOMCommunicator" value="11" />
+      <IDSymbol name="iconDICOMServer" value="12" />
+      <IDSymbol name="iconWTCP" value="13" />
+      <IDSymbol name="iconLoggingTool" value="14" />
+      <IDSymbol name="iconCopy" value="15" />
+      <IDSymbol name="iconOpen" value="16" />
+      <IDSymbol name="iconClear" value="17" />
+      <IDSymbol name="iconUnlock" value="18" />
+      <IDSymbol name="iconFixApp" value="19" />
+      <IDSymbol name="iconFlash" value="20" />
+      <IDSymbol name="iconSetting" value="21" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

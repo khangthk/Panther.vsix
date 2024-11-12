@@ -9,7 +9,16 @@
     <Import_RootNamespace>Panther</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PantherCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PantherCommandTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PantherPackage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PantherCommands.png" />
+    <VSCTCompile Include="$(MSBuildThisFileDirectory)PantherPackage.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
   </ItemGroup>
 </Project>
