@@ -50,6 +50,11 @@ namespace Panther.Commands
                 DeleteLockFilesInPantherSite.DeleteLockFiles();
             }
 
+            if (RegistryHelper.GetAutoUnlockUtility())
+            {
+                UnlockUtilityLockedByUser.UnlockUtility();
+            }
+
             RunExe();
         }
 

@@ -13,6 +13,11 @@ namespace Panther.Commands
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
+            if (RegistryHelper.GetAutoUnlockUtility())
+            {
+                UnlockUtilityLockedByUser.UnlockUtility();
+            }
+
             _ = new CopyBinFilesWindow() { Owner = Application.Current?.MainWindow }.ShowDialog();
         }
 

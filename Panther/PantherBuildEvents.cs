@@ -47,6 +47,11 @@ namespace Panther
                 {
                     DeleteLockFilesInPantherSite.DeleteLockFiles();
                 }
+
+                if (RegistryHelper.GetAutoUnlockUtility())
+                {
+                    UnlockUtilityLockedByUser.UnlockUtility();
+                }
             }
 
             IsBuilding = false;

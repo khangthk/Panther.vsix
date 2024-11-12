@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CopyBinFiles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\DeleteLockFilesInPantherSite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\EnableDisableAutoDeleteLockFiles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\EnableDisableAutoUnlockUtility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\FixAppClosingAfter15Seconds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\OpenBinFolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildCoreCommon.cs" />

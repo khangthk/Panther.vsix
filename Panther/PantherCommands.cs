@@ -75,6 +75,7 @@ namespace Panther
             RegisterCommand(new UnlockUtilityLockedByUser(), PackageIds.CommandUnlockUtilityLockedByUser);
             RegisterCommand(new FixAppClosingAfter15Seconds(), PackageIds.CommandFixAppClosingAfter15Seconds);
             RegisterCommand(new EnableDisableAutoDeleteLockFiles(), PackageIds.CommandEnableDisableAutoDeleteLockFiles);
+            RegisterCommand(new EnableDisableAutoUnlockUtility(), PackageIds.CommandEnableDisableAutoUnlockUtility);
         }
 
         private void RegisterCommand(CommandBase command, int id)
