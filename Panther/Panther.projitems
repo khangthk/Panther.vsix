@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildCoreCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RebuildPantherCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunCommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RunConfigTool.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RunPantherTPS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IniHelper.cs" />
