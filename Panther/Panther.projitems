@@ -9,6 +9,7 @@
     <Import_RootNamespace>Panther</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BuildTargetBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileFolderHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IniHelper.cs" />
